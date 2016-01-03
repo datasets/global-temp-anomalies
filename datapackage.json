@@ -1,64 +1,31 @@
 {
-  "name": "co2-ppm",
-  "title": "CO2 PPM - Trends in Atmospheric Carbon Dioxide",
-  "description": "Data are sourced from the US Government's Earth System Research Laboratory, Global Monitoring Division. Two main series are provided: the Mauna Loa series (which has the longest continuous series since 1958) and a Global Average series (a global average over marine surface sites).",
-  "homepage": "http://www.esrl.noaa.gov/gmd/ccgg/trends",
-  "version": "0.1.0",
+  "name": "global-temp-anomalies",
+  "title": "Nasa GISS Surface Temperature (GISTEMP) Analysis",
+  "description": "Data are sourced from Carbon Dioxide Information Analysis Center (CDIAC). Four different series are provided: Global Annual Temperature Anomalies (Land) 1880-2014, Global Annual Temperature Anomalies (Land and Ocean) 1880-2014, Hemispheric Temperature Anomalies (Land+ Ocean) 1880-2014 and Annual Temperature anomalies (Land + Ocean) for three latitude bands that cover 30%, 40% and 30% of the global area, respectively, 1900-2014.",
+  "homepage": "http://cdiac.ornl.gov/trends/temp/hansen/hansen.html",
   "license": "ODC-PDDL-1.0",
   "sources": [
     {
-      "name": "Trends in Atmospheric Carbon Dioxide, Mauna Loa, Hawaii",
-      "web": "http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html"
+      "name": "Global Annual Temperature Anomalies (Land), 1880-2014",
+      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt"
     },
     {
-      "name": "Trends in Atmospheric Carbon Dioxide, Global",
-      "web": "http://www.esrl.noaa.gov/gmd/ccgg/trends/global.html"
+      "name": "Global Annual Temperature Anomalies (Land+Ocean), 1880-2014",
+      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt"
+    },
+    {
+      "name": "Hemispheric Temperature Anomalies (Land+Ocean), 1880-2014",
+      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt"
+    },
+    {
+      "name": "Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014",
+      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt"
     }
   ],
   "resources": [
     {
-      "name": "co2-mm-mlo",
-      "path": "data/co2-mm-mlo.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Date",
-            "type": "date",
-            "description": "YYYY-MM"
-          },
-          {
-            "name": "Decimal Date",
-            "type": "date",
-            "description": ""
-          },
-          {
-            "name": "Average",
-            "type": "number",
-            "description": "The monthly mean CO2 mole fraction determined from daily averages. If there are missing days concentrated either early or late in the month, the monthly mean is corrected to the middle of the month using the average seasonal cycle. Missing months are denoted by -99.99."
-          },
-          {
-            "name": "Interpolated",
-            "type": "number",
-            "description": "Values from the average column and interpolated values where data are missing. Interpolated values are computed in two steps. First, we compute for each month the average seasonal cycle in a 7-year window around each monthly value. In this way the seasonal cycle is allowed to change slowly over time. We then determine the trend value for each month by removing the seasonal cycle; this result is shown in the trend column. Trend values are linearly interpolated for missing months. The interpolated monthly mean is then the sum of the average seasonal cycle value and the trend value for the missing month."
-          },
-          {
-            "name": "Trend",
-            "type": "number",
-            "description": "Seasonally corrected."
-          },
-          {
-            "name": "Number of Days",
-            "type": "number",
-            "description": "-1 denotes no data for number of daily averages in the month."
-          }
-        ]
-      }
-    },
-    {
-      "name": "co2-annmean-mlo",
-      "path": "data/co2-annmean-mlo.csv",
+      "name": "global-temp-annual",
+      "path": "data/global-temp-annual.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
@@ -66,24 +33,49 @@
           {
             "name": "Year",
             "type": "date",
-            "description": ""
+            "description": "YYYY"
           },
           {
-            "name": "Mean",
+            "name": "Land",
             "type": "number",
-            "description": ""
+            "description": "Global annual anomalies computed from land data, in degrees C"
           },
           {
-            "name": "Uncertainty",
+            "name": "Land and Ocean",
             "type": "number",
-            "description": "The estimated uncertainty in the annual mean is the standard deviation of the differences of annual mean values determined independently by NOAA/ESRL and the Scripps Institution of Oceanography."
+            "description": "Global annual anomalies computed from land and ocean data, in degrees C"
+          },
+          {
+            "name": "N Hem",
+            "type": "number",
+            "description": "Northern hemisphere annual anomalies computed from land and ocean data, in degrees C"
+          },
+          {
+            "name": "S Hem",
+            "type": "number",
+            "description": "Southern hemisphere annual anomalies computed from land and ocean data, in degrees C"
+          },
+          {
+            "name": "Band 1",
+            "type": "number",
+            "description": "Latitude band (90N-23.6N, 30% of global area) annual anomalies computed from land and ocean data, in degrees C"
+          },
+          {
+            "name": "Band 2",
+            "type": "number",
+            "description": "Latitude band (23.6N-23.6S, 40% of global area) annual anomalies computed from land and ocean data, in degrees C"
+          },
+          {
+            "name": "Band 3",
+            "type": "number",
+            "description": "Latitude band (23.6S-90S, 30% of global area) annual anomalies computed from land and ocean data, in degrees C"
           }
         ]
       }
     },
     {
-      "name": "co2-gr-mlo",
-      "path": "data/co2-gr-mlo.csv",
+      "name": "global-temp-5yr",
+      "path": "data/global-temp-5yr.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
@@ -91,97 +83,42 @@
           {
             "name": "Year",
             "type": "date",
-            "description": ""
+            "description": "YYYY"
           },
           {
-            "name": "Annual Increase",
+            "name": "Land",
             "type": "number",
-            "description": "Annual CO2 mole fraction increase (ppm) from Jan 1 through Dec 31."
+            "description": "Global 5-year anomalies mean computed from land data, in degrees C"
           },
           {
-            "name": "Uncertainty",
+            "name": "Land and Ocean",
             "type": "number",
-            "description": "Estimated from the standard deviation of the differences between monthly mean values determined independently by the Scripps Institution of Oceanography and by NOAA/ESRL."
-          }
-        ]
-      }
-    },
-    {
-      "name": "co2-mm-gl",
-      "path": "data/co2-mm-gl.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Date",
-            "type": "date",
-            "description": "YYYY-MM"
+            "description": "Global 5-year anomalies mean computed from land and ocean data, in degrees C"
           },
           {
-            "name": "Decimal Date",
-            "type": "date",
-            "description": ""
-          },
-          {
-            "name": "Average",
+            "name": "N Hem",
             "type": "number",
-            "description": ""
+            "description": "Northern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C"
           },
           {
-            "name": "Trend",
+            "name": "S Hem",
             "type": "number",
-            "description": ""
-          }
-        ]
-      }
-    },
-    {
-      "name": "co2-annmean-gl",
-      "path": "data/co2-annmean-gl.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Year",
-            "type": "date",
-            "description": ""
+            "description": "Southern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C"
           },
           {
-            "name": "Mean",
+            "name": "Band 1",
             "type": "number",
-            "description": ""
+            "description": "Latitude band (90N-23.6N, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
           },
           {
-            "name": "Uncertainty",
+            "name": "Band 2",
             "type": "number",
-            "description": "The uncertainty in the global annual mean is estimated using a monte carlo technique that computes 100 global annual averages, each time using a slightly different set of measurement records from the NOAA ESRL cooperative air sampling network.  The reported uncertainty is the mean of the standard deviations for each annual average using this technique. Please see Conway et al., 1994, JGR, vol. 99, no. D11. for a complete discussion."
-          }
-        ]
-      }
-    },
-    {
-      "name": "co2-gr-gl",
-      "path": "data/co2-gr-gl.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Year",
-            "type": "date",
-            "description": ""
+            "description": "Latitude band (23.6N-23.6S, 40% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
           },
           {
-            "name": "Annual Increase",
+            "name": "Band 3",
             "type": "number",
-            "description": "Annual CO2 mole fraction increase (ppm) from Jan 1 through Dec 31."
-          },
-          {
-            "name": "Uncertainty",
-            "type": "number",
-            "description": "The uncertainty in the global annual mean growth rate is estimated using a monte carlo technique that computes 100 time series of global annual growth rates, each time using measurement records from a different sampling of sites from the NOAA ESRL cooperative air sampling network. Each year has a different uncertainty. Please see Conway et al., 1994, JGR, vol. 99, no. D11. for a complete discussion. The last one or two years listed could have preliminary uncertainties set equal to the average uncertainty since 1980. Before 1980 the global growth rate has been approximated by taking the average of Mauna Loa and the South Pole, correcting for the offset between (MLO+SPO)/2 and the global Marine Boundary Layer, as described in Ballantyne et al, 2012."
+            "description": "Latitude band (23.6S-90S, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
           }
         ]
       }
@@ -190,11 +127,12 @@
   "views": [
     {
       "id": "graph",
-      "label": "Graph",
+      "label": "Global Annual Anomalies",
+      "resourceName":"global-temp-annual",
       "type": "Graph",
       "state": {
-        "group": "Date",
-        "series": ["Interpolated", "Trend"],
+        "group": "Year",
+        "series": ["Land", "Land and Ocean"],
         "graphType": "lines-and-points"
       }
     }
