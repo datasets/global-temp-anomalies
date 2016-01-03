@@ -1,50 +1,55 @@
-CO2 PPM - Trends in Atmospheric Carbon Dioxide. Data are sourced from the US Government's Earth System Research Laboratory, Global Monitoring Division. Two main series are provided: the Mauna Loa series (which has the longest continuous series since 1958) and a Global Average series (a global average over marine surface sites).
+Nasa GISS Surface Temperature (GISTEMP) Analysis. Four different series are provided: Global Annual Temperature Anomalies (Land) 1880-2014, Global Annual Temperature Anomalies (Land and Ocean) 1880-2014, Hemispheric Temperature Anomalies (Land+ Ocean) 1880-2014 and Annual Temperature anomalies (Land + Ocean) for three latitude bands that cover 30%, 40% and 30% of the global area, respectively, 1900-2014.
 
 ## Data
 
+### Period of Record
+> 1880-2014 (Anomalies are relative to the 1951-80 base period means.)
+
 ### Description
 
-> Data are reported as a dry air mole fraction defined as the number of molecules of carbon dioxide divided by the number of all molecules in air, including CO2 itself, after water vapor has been removed. The mole fraction is expressed as parts per million (ppm). Example: 0.000400 is expressed as 400 ppm.[*][ccgg-trends]
+> The NASA GISS Surface Temperature (GISTEMP) analysis provides a measure of the changing global surface temperature with monthly resolution for the period since 1880, when a reasonably global distribution of meteorological stations was established. The input data Ruedy et al. use for the analysis, collected by many national meteorological services around the world, are the adjusted data of the [Global Historical Climatology Network (GHCN) Vs. 3](http://www.ncdc.noaa.gov/ghcnm/) (this represents a change from prior use of unadjusted Vs. 2 data) (Peterson and Vose, 1997 and 1998), [United States Historical Climatology Network (USHCN)](http://www.ncdc.noaa.gov/oa/climate/research/ushcn/) data, and [SCAR (Scientific Committee on Antarctic Research)](http://www.antarctica.ac.uk/met/READER/) data from Antarctic stations. Documentation of the basic analysis method is provided by Hansen et al. (1999), with several modifications described by Hansen et al. (2001). The GISS analysis is updated monthly, however CDIAC's presentation of the data here is updated annually.
+
+### Key finding
+> The global mean temperature for 2014 was the warmest on record (see [Trends section](http://cdiac.ornl.gov/trends/temp/hansen/hansen.html#trends) for further details)
 
 ### Citations
 
-1. *Trends in Atmospheric Carbon Dioxide, Mauna Loa, Hawaii.* Dr. Pieter Tans, NOAA/ESRL (www.esrl.noaa.gov/gmd/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (scrippsco2.ucsd.edu/).
-1. *Trends in Atmospheric Carbon Dioxide, Global.* Ed Dlugokencky and Pieter Tans, NOAA/ESRL (www.esrl.noaa.gov/gmd/ccgg/trends/).
+1. *Ruedy, R., M. Sato, and K. Lo. 2015. NASA GISS Surface Temperature (GISTEMP) Analysis. In Trends: A Compendium of Data on Global Change. Carbon Dioxide Information Analysis Center, Oak Ridge National Laboratory, U.S. Department of Energy, Oak Ridge, Tenn., U.S.A. doi: 10.3334/CDIAC/cli.001 .
 
 ### Sources
-
-1. 
-  * Name: Trends in Atmospheric Carbon Dioxide, Mauna Loa, Hawaii
-  * Web: http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html
-1. 
-  * Name: Trends in Atmospheric Carbon Dioxide, Global
-  * Web: http://www.esrl.noaa.gov/gmd/ccgg/trends/global.html
+1.
+  * Name: Global Annual Temperature Anomalies (Land), 1880-2014
+  * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt
+1.
+  * Name: Global Annual Temperature Anomalies (Land+Ocean), 1880-2014
+  * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt
+1.
+  * Name: Hemispheric Temperature Anomalies (Land+Ocean), 1880-2014
+  * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt
+1.
+  * Name: Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014
+  * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt
 
 ## Data Preparation
+
+### Requirements
+
+Python 2 together with modules urllib and csv are required in order to process the data. 
 
 ### Processing
 
 Run the following script from this directory to download and process the data:
 
 ```bash
-make data
+make
 ```
 
 ### Resources
 
-The raw data are output to `./tmp`. The processed data are output to `./data`.
+The raw data are output to `./cache`. The processed data are output to `./data`.
 
 ## License
 
 ### ODC-PDDL-1.0
 
 This Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
-
-### Notes
-
-The [terms of use][gmd] of the source dataset list three specific restrictions on public use of these data:
-
-> The information on government servers are in the public domain, unless specifically annotated otherwise, and may be used freely by the public so long as you do not 1) claim it is your own (e.g. by claiming copyright for NOAA information – see next paragraph), 2) use it in a manner that implies an endorsement or affiliation with NOAA, or 3) modify it in content and then present it as official government material.[*][gmd]
-
-[ccgg-trends]: http://www.esrl.noaa.gov/gmd/ccgg/trends/index.html
-[gmd]: http://www.esrl.noaa.gov/gmd/about/disclaimer.html
