@@ -6,7 +6,7 @@ sources = [ "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt?force_down
             "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt?force_download=true",
             "http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt?force_download=true",
             "http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt?force_download=true" ]
-cache = 'cache/'
+archive = 'archive/'
 out_annual = 'data/global-temp-annual.csv'
 out_5yr = 'data/global-temp-5yr.csv'
 
@@ -19,7 +19,7 @@ def execute():
     names = []
     for s in sources:
         name = string_between(s,'hansen/','?force_download')
-        urllib.urlretrieve(s, cache+name)
+        urllib.urlretrieve(s, archive+name)
         names.append(name)
 
     header = ['Year', 'Land', 'Land and Ocean','N Hem','S Hem','Band 1','Band 2','Band 3']
@@ -27,7 +27,7 @@ def execute():
     records_annual = []
     records_5yr = []
     temp = 0
-    for line in open(cache+'gl_land.txt'):
+    for line in open(archive+'gl_land.txt'):
         if '--------' in line:
             temp+=1
             continue
@@ -41,7 +41,7 @@ def execute():
         records_5yr.append([year] + data[half+1:])
 
     temp = 0
-    for line in open(cache+'gl_land_ocean.txt'):
+    for line in open(archive+'gl_land_ocean.txt'):
         if '--------' in line:
             temp+=1
             continue
@@ -56,7 +56,7 @@ def execute():
         records_5yr[i]+=data[half+1:]
 
     temp = 0
-    for line in open(cache+'nhsh.txt'):
+    for line in open(archive+'nhsh.txt'):
         if '--------' in line:
             temp+=1
             continue
@@ -71,7 +71,7 @@ def execute():
         records_5yr[i]+=data[half+1:]
 
     temp = 0
-    for line in open(cache+'norlowsou.txt'):
+    for line in open(archive+'norlowsou.txt'):
         if '--------' in line:
             temp+=1
             continue
