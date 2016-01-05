@@ -15,19 +15,16 @@ Nasa GISS Surface Temperature (GISTEMP) Analysis. Four different series are prov
 
 ### Sources
 
-1.
+1. 
   * Name: Global Annual Temperature Anomalies (Land), 1880-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt
-  
-2.
+1. 
   * Name: Global Annual Temperature Anomalies (Land+Ocean), 1880-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt
-
-3.
+1. 
   * Name: Hemispheric Temperature Anomalies (Land+Ocean), 1880-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt
-
-4.
+1. 
   * Name: Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt
 
