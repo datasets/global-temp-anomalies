@@ -14,7 +14,6 @@ Nasa GISS Surface Temperature (GISTEMP) Analysis. Four different series are prov
 
 
 ### Sources
-
 1.
   * Name: Global Annual Temperature Anomalies (Land), 1880-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt
@@ -56,7 +55,7 @@ Data are sourced from US Federal government funded agency and no copyright restr
 
 ### Additional work
 
-All the additional work made to build this Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
+> All the additional work made to build this Data Package is made available under the Public Domain Dedication and License v1.0 whose full text can be found at: http://www.opendatacommons.org/licenses/pddl/1.0/
 
 ## Citations
 
