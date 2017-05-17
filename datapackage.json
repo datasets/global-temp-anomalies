@@ -1,10 +1,115 @@
 {
-  "name": "global-temp-anomalies",
-  "title": "Nasa GISS Surface Temperature (GISTEMP) Analysis",
   "description": "Data are sourced from Carbon Dioxide Information Analysis Center (CDIAC). Four different series are provided: Global Annual Temperature Anomalies (Land) 1880-2014, Global Annual Temperature Anomalies (Land and Ocean) 1880-2014, Hemispheric Temperature Anomalies (Land+ Ocean) 1880-2014 and Annual Temperature anomalies (Land + Ocean) for three latitude bands that cover 30%, 40% and 30% of the global area, respectively, 1900-2014.",
   "homepage": "http://cdiac.ornl.gov/trends/temp/hansen/hansen.html",
-  "keywords":["climate"],
+  "keywords": [
+    "climate"
+  ],
   "license": "ODC-PDDL-1.0",
+  "name": "global-temp-anomalies",
+  "resources": [
+    {
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "global-temp-annual",
+      "path": "data/global-temp-annual.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "YYYY",
+            "format": "any",
+            "name": "Year",
+            "type": "date"
+          },
+          {
+            "description": "Global annual anomalies computed from land data, in degrees C",
+            "name": "Land",
+            "type": "number"
+          },
+          {
+            "description": "Global annual anomalies computed from land and ocean data, in degrees C",
+            "name": "Land and Ocean",
+            "type": "number"
+          },
+          {
+            "description": "Northern hemisphere annual anomalies computed from land and ocean data, in degrees C",
+            "name": "N Hem",
+            "type": "number"
+          },
+          {
+            "description": "Southern hemisphere annual anomalies computed from land and ocean data, in degrees C",
+            "name": "S Hem",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (90N-23.6N, 30% of global area) annual anomalies computed from land and ocean data, in degrees C",
+            "name": "Band 1",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (23.6N-23.6S, 40% of global area) annual anomalies computed from land and ocean data, in degrees C",
+            "name": "Band 2",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (23.6S-90S, 30% of global area) annual anomalies computed from land and ocean data, in degrees C",
+            "name": "Band 3",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "global-temp-5yr",
+      "path": "data/global-temp-5yr.csv",
+      "schema": {
+        "fields": [
+          {
+            "description": "YYYY",
+            "format": "any",
+            "name": "Year",
+            "type": "date"
+          },
+          {
+            "description": "Global 5-year anomalies mean computed from land data, in degrees C",
+            "name": "Land",
+            "type": "number"
+          },
+          {
+            "description": "Global 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "Land and Ocean",
+            "type": "number"
+          },
+          {
+            "description": "Northern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "N Hem",
+            "type": "number"
+          },
+          {
+            "description": "Southern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "S Hem",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (90N-23.6N, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "Band 1",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (23.6N-23.6S, 40% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "Band 2",
+            "type": "number"
+          },
+          {
+            "description": "Latitude band (23.6S-90S, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C",
+            "name": "Band 3",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ],
   "sources": [
     {
       "name": "Global Annual Temperature Anomalies (Land), 1880-2014",
@@ -23,119 +128,21 @@
       "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt"
     }
   ],
-  "resources": [
-    {
-      "name": "global-temp-annual",
-      "path": "data/global-temp-annual.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Year",
-            "type": "date",
-            "description": "YYYY"
-          },
-          {
-            "name": "Land",
-            "type": "number",
-            "description": "Global annual anomalies computed from land data, in degrees C"
-          },
-          {
-            "name": "Land and Ocean",
-            "type": "number",
-            "description": "Global annual anomalies computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "N Hem",
-            "type": "number",
-            "description": "Northern hemisphere annual anomalies computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "S Hem",
-            "type": "number",
-            "description": "Southern hemisphere annual anomalies computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 1",
-            "type": "number",
-            "description": "Latitude band (90N-23.6N, 30% of global area) annual anomalies computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 2",
-            "type": "number",
-            "description": "Latitude band (23.6N-23.6S, 40% of global area) annual anomalies computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 3",
-            "type": "number",
-            "description": "Latitude band (23.6S-90S, 30% of global area) annual anomalies computed from land and ocean data, in degrees C"
-          }
-        ]
-      }
-    },
-    {
-      "name": "global-temp-5yr",
-      "path": "data/global-temp-5yr.csv",
-      "format": "csv",
-      "mediatype": "text/csv",
-      "schema": {
-        "fields": [
-          {
-            "name": "Year",
-            "type": "date",
-            "description": "YYYY"
-          },
-          {
-            "name": "Land",
-            "type": "number",
-            "description": "Global 5-year anomalies mean computed from land data, in degrees C"
-          },
-          {
-            "name": "Land and Ocean",
-            "type": "number",
-            "description": "Global 5-year anomalies mean computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "N Hem",
-            "type": "number",
-            "description": "Northern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "S Hem",
-            "type": "number",
-            "description": "Southern hemisphere 5-year anomalies mean computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 1",
-            "type": "number",
-            "description": "Latitude band (90N-23.6N, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 2",
-            "type": "number",
-            "description": "Latitude band (23.6N-23.6S, 40% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
-          },
-          {
-            "name": "Band 3",
-            "type": "number",
-            "description": "Latitude band (23.6S-90S, 30% of global area) 5-year anomalies mean computed from land and ocean data, in degrees C"
-          }
-        ]
-      }
-    }
-  ],
+  "title": "Nasa GISS Surface Temperature (GISTEMP) Analysis",
   "views": [
     {
       "id": "graph",
       "label": "Global Annual Anomalies",
-      "resourceName":"global-temp-annual",
-      "type": "Graph",
+      "resourceName": "global-temp-annual",
       "state": {
+        "graphType": "lines-and-points",
         "group": "Year",
-        "series": ["Land", "Land and Ocean"],
-        "graphType": "lines-and-points"
-      }
+        "series": [
+          "Land",
+          "Land and Ocean"
+        ]
+      },
+      "type": "Graph"
     }
   ]
 }
