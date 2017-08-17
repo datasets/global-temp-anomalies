@@ -131,18 +131,18 @@
   "title": "Nasa GISS Surface Temperature (GISTEMP) Analysis",
   "views": [
     {
-      "id": "graph",
-      "label": "Global Annual Anomalies",
+      "name": "graph",
+      "title": "Global Annual Anomalies",
       "resourceName": "global-temp-annual",
-      "state": {
-        "graphType": "lines-and-points",
+      "specType": "simple",
+      "spec": {
+        "type": "lines-and-points",
         "group": "Year",
         "series": [
           "Land",
           "Land and Ocean"
         ]
-      },
-      "type": "Graph"
+      }
     }
   ]
 }
