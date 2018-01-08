@@ -28,7 +28,7 @@ Nasa GISS Surface Temperature (GISTEMP) Analysis. Four different series are prov
   * Name: Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014
   * Web: http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt
 
-## Data Preparation
+## Preparation
 
 ### Requirements
 
