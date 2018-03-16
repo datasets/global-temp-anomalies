@@ -4,7 +4,13 @@
   "keywords": [
     "climate"
   ],
-  "license": "ODC-PDDL-1.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
   "name": "global-temp-anomalies",
   "resources": [
     {
@@ -113,22 +119,22 @@
   "sources": [
     {
       "name": "Global Annual Temperature Anomalies (Land), 1880-2014",
-      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt",
+      "path": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land.txt",
       "title": "Global Annual Temperature Anomalies (Land), 1880-2014"
     },
     {
       "name": "Global Annual Temperature Anomalies (Land+Ocean), 1880-2014",
-      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt",
+      "path": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/gl_land_ocean.txt",
       "title": "Global Annual Temperature Anomalies (Land+Ocean), 1880-2014"
     },
     {
       "name": "Hemispheric Temperature Anomalies (Land+Ocean), 1880-2014",
-      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt",
+      "path": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/nhsh.txt",
       "title": "Hemispheric Temperature Anomalies (Land+Ocean), 1880-2014"
     },
     {
       "name": "Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014",
-      "web": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt",
+      "path": "http://cdiac.ornl.gov/ftp/trends/temp/hansen/norlowsou.txt",
       "title": "Global Annual Temperature Anomalies (Land+Ocean) for three latitude bands, 1900-2014"
     }
   ],
