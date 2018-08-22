@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "8"
+install: npm i -g data-cli
+script:
+  - python scripts/process.py # Generate data (default python v2 on Travis)
+  - data push
+branch:
+  only:
+    - master
