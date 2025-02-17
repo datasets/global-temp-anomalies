@@ -1,5 +1,8 @@
 <a className="gh-badge" href="https://datahub.io/core/global-temp-anomalies"><img src="https://badgen.net/badge/icon/View%20on%20datahub.io/orange?icon=https://datahub.io/datahub-cube-badge-icon.svg&label&scale=1.25" alt="badge" /></a>
 
+
+⚠️⚠️⚠️ DATA HAS BEEN DEPRECATED ⚠️⚠️⚠️
+
 Nasa GISS Surface Temperature (GISTEMP) Analysis. Four different series are provided: Global Annual Temperature Anomalies (Land) 1880-2014, Global Annual Temperature Anomalies (Land and Ocean) 1880-2014, Hemispheric Temperature Anomalies (Land+ Ocean) 1880-2014 and Annual Temperature anomalies (Land + Ocean) for three latitude bands that cover 30%, 40% and 30% of the global area, respectively, 1900-2014.
 
 ## Data
