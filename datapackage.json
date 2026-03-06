@@ -114,12 +114,6 @@
           }
         ]
       }
-    },
-    {
-      "format": "json",
-      "mediatype": "application/json",
-      "name": "global-temp-annual-json",
-      "path": "data/global-temp-annual.json"
     }
   ],
   "sources": [
@@ -149,9 +143,12 @@
     {
       "name": "graph",
       "title": "Global Annual Anomalies",
-      "resourceName": "global-temp-annual-json",
+      "resourceName": "global-temp-annual",
       "resources": [
-        "global-temp-annual-json"
+        {
+          "name": "global-temp-annual",
+          "transform": []
+        }
       ],
       "specType": "simple",
       "spec": {
