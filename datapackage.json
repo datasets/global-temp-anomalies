@@ -16,57 +16,6 @@
     {
       "format": "csv",
       "mediatype": "text/csv",
-      "name": "global-temp-annual",
-      "path": "data/global-temp-annual.csv",
-      "schema": {
-        "fields": [
-          {
-            "description": "YYYY",
-            "format": "any",
-            "name": "Year",
-            "type": "date"
-          },
-          {
-            "description": "Global annual anomalies computed from land data, in degrees C",
-            "name": "Land",
-            "type": "number"
-          },
-          {
-            "description": "Global annual anomalies computed from land and ocean data, in degrees C",
-            "name": "Land and Ocean",
-            "type": "number"
-          },
-          {
-            "description": "Northern hemisphere annual anomalies computed from land and ocean data, in degrees C",
-            "name": "N Hem",
-            "type": "number"
-          },
-          {
-            "description": "Southern hemisphere annual anomalies computed from land and ocean data, in degrees C",
-            "name": "S Hem",
-            "type": "number"
-          },
-          {
-            "description": "Latitude band (90N-23.6N, 30% of global area) annual anomalies computed from land and ocean data, in degrees C",
-            "name": "Band 1",
-            "type": "number"
-          },
-          {
-            "description": "Latitude band (23.6N-23.6S, 40% of global area) annual anomalies computed from land and ocean data, in degrees C",
-            "name": "Band 2",
-            "type": "number"
-          },
-          {
-            "description": "Latitude band (23.6S-90S, 30% of global area) annual anomalies computed from land and ocean data, in degrees C",
-            "name": "Band 3",
-            "type": "number"
-          }
-        ]
-      }
-    },
-    {
-      "format": "csv",
-      "mediatype": "text/csv",
       "name": "annual",
       "path": "data/global-temp-annual.csv",
       "schema": {
@@ -112,8 +61,13 @@
             "name": "Band 3",
             "type": "number"
           }
+        ],
+        "missingValues": [
+          ""
         ]
-      }
+      },
+      "profile": "tabular-data-resource",
+      "encoding": "utf-8"
     },
     {
       "format": "csv",
@@ -163,8 +117,13 @@
             "name": "Band 3",
             "type": "number"
           }
+        ],
+        "missingValues": [
+          ""
         ]
-      }
+      },
+      "profile": "tabular-data-resource",
+      "encoding": "utf-8"
     }
   ],
   "sources": [
@@ -194,17 +153,20 @@
     {
       "name": "graph",
       "title": "Global Annual Anomalies",
-      "resourceName": "annual",
       "specType": "simple",
       "spec": {
-        "type": "lines-and-points",
+        "type": "line",
         "group": "Year",
         "series": [
           "Land",
           "Land and Ocean"
         ]
-      }
+      },
+      "resources": [
+        "annual"
+      ]
     }
   ],
-  "collection": "climate-change"
+  "collection": "climate-change",
+  "profile": "data-package"
 }
