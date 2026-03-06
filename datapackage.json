@@ -143,6 +143,7 @@
     {
       "name": "graph",
       "title": "Global Annual Anomalies",
+      "resourceName": "global-temp-annual",
       "resources": [
         "global-temp-annual"
       ],
