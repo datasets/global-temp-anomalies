@@ -67,7 +67,8 @@
         ]
       },
       "profile": "tabular-data-resource",
-      "encoding": "utf-8"
+      "encoding": "utf-8",
+      "description": "Annual global temperature anomalies in degrees Celsius from 1880 to 2014, including land-only, land-and-ocean combined, hemispheric, and latitude band breakdowns, sourced from NASA GISS via CDIAC."
     },
     {
       "format": "csv",
@@ -123,7 +124,8 @@
         ]
       },
       "profile": "tabular-data-resource",
-      "encoding": "utf-8"
+      "encoding": "utf-8",
+      "description": "5-year rolling mean global temperature anomalies in degrees Celsius from 1880 to 2014, including land-only, land-and-ocean combined, hemispheric, and latitude band breakdowns, sourced from NASA GISS via CDIAC."
     }
   ],
   "sources": [
